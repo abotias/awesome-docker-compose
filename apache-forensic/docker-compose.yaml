@@ -1,0 +1,13 @@
+services:
+  apache:
+    image: httpd:latest
+    container_name: my-apache-app
+    ports:
+    - '80:80'
+    - '443:443'
+    volumes:
+    - ./html:/usr/local/apache2/htdocs
+    - ./apache/httpd.conf:/usr/local/apache2/conf/httpd.conf
+    - ./certs/fullchain.pem:/usr/local/apache2/certs/fullchain.pem
+    - ./certs/privkey.pem:/usr/local/apache2/certs/privkey.pem
+    - ./apache/logs:/usr/local/apache2/logs 
