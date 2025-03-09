@@ -1,0 +1,7 @@
+Host github.com
+  Hostname github.com
+  StrictHostKeyChecking no
+  UserKnownHostsFile=/dev/null
+  IdentityFile /var/jenkins_home/jenkins
+Host *
+  IdentityFile /var/jenkins_home/jenkins
