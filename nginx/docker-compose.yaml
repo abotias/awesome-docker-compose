@@ -1,0 +1,14 @@
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./conf.d/default.conf:/etc/nginx/conf.d/default.conf
+      - ./conf.d/nginx.conf:/etc/nginx/nginx.conf
+      - ./conf.d/whitelist:/etc/nginx/whitelist
+      - ./certs:/etc/ssl/certs/
+      - ./src:/usr/share/nginx/html
+    restart: always
